@@ -4,13 +4,24 @@ import tuanhiep.usa.common.utils.TypeAlgo;
 
 import java.util.ArrayList;
 
-public abstract class abstractAlgo implements algo{
-    private String name="";
-    private ArrayList parameters= new ArrayList();
+public abstract class abstractAlgo implements algo {
+    private String name = "";
+    private ArrayList parameters = new ArrayList();
+
+    public void test(Object[] args) {
+        // set the parameters to test
+        if (args.length > 0) {
+            for (int i = 0; i < args.length; i++) {
+                getParameters().set(i, args[i]);
+            }
+        }
+        run();
+    }
 
     public ArrayList getParameters() {
         return parameters;
     }
+
 
     public void setParameters(ArrayList parameters) {
         this.parameters = parameters;
@@ -25,7 +36,7 @@ public abstract class abstractAlgo implements algo{
     }
 
     private TypeAlgo type;
-    private String description="";
+    private String description = "";
 
     public String getDescription() {
         return description;

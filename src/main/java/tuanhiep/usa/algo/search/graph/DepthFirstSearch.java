@@ -3,7 +3,7 @@ package tuanhiep.usa.algo.search.graph;
 import tuanhiep.usa.common.abstractAlgo;
 
 public class DepthFirstSearch extends abstractAlgo {
-    public void setUp() {
+    public void setUpDefault() {
         // Graph is first parameter
         getParameters().add(new Graph());
         // Node to search is second parameter
@@ -14,7 +14,7 @@ public class DepthFirstSearch extends abstractAlgo {
 
     }
 
-    public void test(String[] args) {
+    public void getResult() {
 
     }
 }
