@@ -8,13 +8,14 @@ public abstract class abstractAlgo implements algo {
     private String name = "";
     private ArrayList parameters = new ArrayList();
 
-    public void test(Object[] args) {
+    public void test(ArrayList args) {
         // set the parameters to test
-        if (args.length > 0) {
-            for (int i = 0; i < args.length; i++) {
-                getParameters().set(i, args[i]);
+        if (args.size() > 0) {
+            for (int i = 0; i < args.size(); i++) {
+                getParameters().set(i, args.get(i));
             }
         }
+        else setUpDefault();
         run();
     }
 

@@ -14,10 +14,11 @@ public class DepthFirstSearch extends abstractAlgo {
         Graph graph = (Graph) getParameters().get(0);
         Node keyNode = (Node) getParameters().get(1);
         boolean result= hasChild(graph.getInitNode(),keyNode);
-        getParameters().set(2,result);
+        getParameters().add(result);
     }
 
     private boolean hasChild(Node beginningNode, Node keyNode) {
+        if( beginningNode== null || beginningNode.getAdjacent().size()==0) return false;
         for (Node node: beginningNode.getAdjacent()) {
             if(node.getId()== keyNode.getId()) {
                 return true;

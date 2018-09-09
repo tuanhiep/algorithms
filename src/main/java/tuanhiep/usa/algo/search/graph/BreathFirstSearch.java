@@ -16,7 +16,4 @@ public class BreathFirstSearch extends abstractAlgo {
 
     }
 
-    public void test(String[] args) {
-
-    }
 }
