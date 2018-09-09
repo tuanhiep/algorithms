@@ -16,7 +16,6 @@ public class DepthFirstSearchTest {
         boolean result = (Boolean) depthFirstSearch.getResult();
         Assertions.assertThat(result).isTrue();
         // test cycle
-
         Graph graph = new Graph();
         Node no1= new Node(1);
         Node no2= new Node(2);
