@@ -7,5 +7,5 @@ public interface algo {
     public void test(Object[] args);
     // set up the default value as corresponding parameters that need to do the algorithm
     public void setUpDefault();
-    public void getResult();
+    public Object getResult();
 }

@@ -3,8 +3,9 @@ package tuanhiep.usa.algo.search.graph;
 import tuanhiep.usa.common.abstractAlgo;
 
 public class BreathFirstSearch extends abstractAlgo {
-    public void getResult() {
+    public Object getResult() {
 
+        return null;
     }
 
     public void setUpDefault() {
