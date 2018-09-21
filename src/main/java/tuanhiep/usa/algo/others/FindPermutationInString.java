@@ -31,4 +31,8 @@ public class FindPermutationInString extends abstractAlgo {
 
         return null;
     }
+
+    public void print() {
+
+    }
 }

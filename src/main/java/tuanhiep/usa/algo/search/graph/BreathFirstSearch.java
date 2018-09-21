@@ -8,6 +8,10 @@ public class BreathFirstSearch extends abstractAlgo {
         return null;
     }
 
+    public void print() {
+
+    }
+
     public void setUpDefault() {
 
     }

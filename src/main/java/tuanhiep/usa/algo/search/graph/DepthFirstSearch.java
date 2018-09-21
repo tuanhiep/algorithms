@@ -49,7 +49,6 @@ public class DepthFirstSearch extends abstractAlgo {
             return false;
         // a node is called visited when we checked its Id with keyNodeId
         visitedNodes.add(beginningNode);
-
         for (Node nextNode : beginningNode.getAdjacent()) {
             if( hasChild(nextNode.getId(), keyNodeId, visitedNodes, graph)) return true;
         }
@@ -58,5 +57,9 @@ public class DepthFirstSearch extends abstractAlgo {
 
     public Object getResult() {
         return getParameters().get(2);
+    }
+
+    public void print() {
+
     }
 }
