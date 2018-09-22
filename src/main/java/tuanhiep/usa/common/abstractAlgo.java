@@ -43,7 +43,7 @@ public abstract class abstractAlgo implements algo {
     }
 
     public void test(ArrayList args) {
-        System.out.println(this.name + "\nType Algorithm " + this.type + "\n" + this.description);
+        System.out.println("\n"+this.name + "\nType Algorithm " + this.type + "\n" + this.description);
         // set the parameters to test
         if (args.size() > 0) {
             for (int i = 0; i < args.size(); i++) {
