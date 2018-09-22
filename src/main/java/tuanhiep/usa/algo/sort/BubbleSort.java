@@ -6,7 +6,7 @@ import tuanhiep.usa.common.utils.TypeAlgo;
 import java.util.ArrayList;
 
 /**
- * Algorithm to do the quick sorting for an array
+ * Algorithm to do the bubble sorting for an array
  */
 public class BubbleSort extends abstractAlgo {
     public void setUpDefault() {
