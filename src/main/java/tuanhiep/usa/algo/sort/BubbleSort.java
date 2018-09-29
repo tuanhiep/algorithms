@@ -47,13 +47,13 @@ public class BubbleSort extends abstractAlgo {
         int[] input = (int[]) this.getParameters().get(0);
         int[] output = (int[]) this.getResult();
         System.out.println("\nInput Array");
-        for (int i = 0; i < input.length; i++) {
-            System.out.print(input[i] + " ");
+        for (int anInput : input) {
+            System.out.print(anInput + " ");
         }
         System.out.println("\nOutput Array");
 
-        for (int i = 0; i < output.length; i++) {
-            System.out.print(output[i] + " ");
+        for (int anOutput : output) {
+            System.out.print(anOutput + " ");
         }
     }
 

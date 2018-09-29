@@ -2,13 +2,12 @@ package tuanhiep.usa.algo.search.graph;
 
 
 import org.assertj.core.api.Assertions;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 public class DepthFirstSearchTest {
-    DepthFirstSearch depthFirstSearch = new DepthFirstSearch();
+    private final DepthFirstSearch depthFirstSearch = new DepthFirstSearch();
     @Test
     public void runTest() {
         // test case default

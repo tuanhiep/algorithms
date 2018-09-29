@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Graph {
     HashMap<Integer, Node> nodeLookUp = new HashMap<Integer, Node>();
-    Node initNode;
+    private Node initNode;
     public Node getNode(int id) {
         return nodeLookUp.get(id);
     }

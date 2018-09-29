@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 public class BubbleSortTest {
-    BubbleSort bubbleSort= new BubbleSort();
+    private final BubbleSort bubbleSort = new BubbleSort();
     @Test
     public void bubbleSortDefaultTest() {
         bubbleSort.setUpDefault();

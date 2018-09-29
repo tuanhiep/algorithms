@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 public class MergeSortTest {
-    MergeSort mergeSort = new MergeSort();
+    private final MergeSort mergeSort = new MergeSort();
 
     @Test
     public void mergeArrayTest() {
@@ -53,7 +53,6 @@ public class MergeSortTest {
     @Test
     public void arrayCopyTest() {
         mergeSort.setUpDefault();
-
         int[] target = (int[]) mergeSort.getParameters().get(0);
         int size = target.length;
         // finished condition
@@ -67,4 +66,6 @@ public class MergeSortTest {
         Assertions.assertThat(secondInput).isEqualTo(new int[]{4, 10, 15, 14, 12, 11, 13});
 
     }
+
+
 }
