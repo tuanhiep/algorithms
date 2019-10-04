@@ -4,7 +4,7 @@ public enum TypeAlgo {
     SEARCH("search"),
     CLASSIFY("classify"),
     SORT("sort"),
-    STRUCTURE("data structure"),
+    DATA_STRUCTURE("data structure"),
     OTHERS("others");
     private String type;
 
