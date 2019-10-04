@@ -4,6 +4,7 @@ import tuanhiep.usa.common.abstractAlgo;
 import tuanhiep.usa.common.utils.TypeAlgo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CoinChange extends abstractAlgo {
 
@@ -50,11 +51,11 @@ public class CoinChange extends abstractAlgo {
     }
 
     public static long makeChange(int[] coins, int money) {
-        return makeChange(coins, money, 0);
+        return makeChange(coins, money, 0, new HashMap<String, Long>());
     }
 
 
-    public static long makeChange(int[] coins, int money, int index) {
+    public static long makeChange(int[] coins, int money, int index, HashMap<String, Long> memo) {
         if (money == 0) {
             return 1;
         }
@@ -63,11 +64,17 @@ public class CoinChange extends abstractAlgo {
         }
         int amountWithCoins = 0;
         long ways = 0;
+        String key = money + "-" + index;
+        if (memo.containsKey(key)) {
+            return memo.get(key);
+        }
         while (amountWithCoins < money) {
             int remaining = money - amountWithCoins;
-            ways += makeChange(coins, remaining, index + 1);
+            ways += makeChange(coins, remaining, index + 1, memo);
             amountWithCoins += coins[index];
         }
+//        Memorization technique to not compute the same problem again
+        memo.put(key, ways);
         return ways;
 
     }
