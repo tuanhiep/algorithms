@@ -37,18 +37,18 @@ public class DepthFirstSearch extends abstractAlgo {
     public void run() {
         Graph graph = (Graph) getParameters().get(0);
         Node keyNode = (Node) getParameters().get(1);
-        HashSet<Node> visitedNodes = new HashSet<Node>();
+        HashSet<Integer> visitedNodes = new HashSet<Integer>();
         boolean result = hasPathDFS(graph.getInitNode().getId(), keyNode.getId(), visitedNodes, graph);
         getParameters().add(result);
     }
 
-    private boolean hasPathDFS(int beginningId, int destId, HashSet<Node> visitedNodes, Graph graph) {
+    private boolean hasPathDFS(int beginningId, int destId, HashSet<Integer> visitedNodes, Graph graph) {
         Node beginningNode = graph.getNode(beginningId);
         if (beginningId == destId) return true;
         if (beginningNode == null || visitedNodes.contains(beginningNode) || beginningNode.getAdjacent().size() == 0)
             return false;
         // a node is called visited when we checked its Id with keyNodeId
-        visitedNodes.add(beginningNode);
+        visitedNodes.add(beginningNode.getId());
         for (Node nextNode : beginningNode.getAdjacent()) {
             if( hasPathDFS(nextNode.getId(), destId, visitedNodes, graph)) return true;
         }
