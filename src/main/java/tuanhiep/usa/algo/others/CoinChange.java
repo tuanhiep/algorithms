@@ -25,17 +25,6 @@ public class CoinChange extends abstractAlgo {
 
     @Override
     public void run() {
-        int total = (int) this.getParameters().get(0);
-        int[] denominations = (int[]) this.getParameters().get(1);
-        int[][] surplus = new int[denominations.length][];
-        int rest = total;
-        for (int i = 0; i < denominations.length; i++) {
-            surplus[i][0] = rest;
-            surplus[i][1] = denominations[i];
-            surplus[i][2] = rest / denominations[i];
-            surplus[i][3] = rest % denominations[i];
-
-        }
 
 
     }
@@ -54,7 +43,15 @@ public class CoinChange extends abstractAlgo {
         return makeChange(coins, money, 0, new HashMap<String, Long>());
     }
 
-
+    /**
+     * Solve the problem of make change an amount of money with predefined set of denominations
+     *
+     * @param coins
+     * @param money
+     * @param index
+     * @param memo
+     * @return
+     */
     public static long makeChange(int[] coins, int money, int index, HashMap<String, Long> memo) {
         if (money == 0) {
             return 1;
@@ -65,6 +62,7 @@ public class CoinChange extends abstractAlgo {
         int amountWithCoins = 0;
         long ways = 0;
         String key = money + "-" + index;
+//        Memorization technique to not compute the same problem again
         if (memo.containsKey(key)) {
             return memo.get(key);
         }
