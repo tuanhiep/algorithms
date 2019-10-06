@@ -42,7 +42,7 @@ public class ConnectedCells extends abstractAlgo {
     }
 
     /**
-     *  Get the size of region which contains 1 in matrix
+     *  Get the size of region which contains 1 in matrix using DFS
      * @param matrix
      * @param row
      * @param column
