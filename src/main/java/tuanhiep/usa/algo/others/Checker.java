@@ -2,6 +2,9 @@ package tuanhiep.usa.algo.others;
 
 import java.util.Comparator;
 
+/**
+ * See how to implement comparator to compare objects
+ */
 public class Checker implements Comparator<Player> {
 
     @Override
