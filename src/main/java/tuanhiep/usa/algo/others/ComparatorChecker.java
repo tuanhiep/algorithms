@@ -5,7 +5,7 @@ import java.util.Comparator;
 /**
  * See how to implement comparator to compare objects
  */
-public class Checker implements Comparator<Player> {
+public class ComparatorChecker implements Comparator<Player> {
 
     @Override
     public int compare(Player p1, Player p2) {
