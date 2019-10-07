@@ -60,7 +60,7 @@ public class Anagram extends abstractAlgo {
         int[] result = new int[NUMBER_LETTER];
         for (int i = 0; i < s1.length(); i++) {
             char c= s1.charAt(i);
-            int offset = c - 'a';
+            int offset = c - (int)'a';
             result[offset]++;
 
         }
