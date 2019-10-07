@@ -27,6 +27,7 @@ public class Anagram extends abstractAlgo {
 
     /**
      * Return the number of characters we need to remove to make anagram from 2 strings given
+     *
      * @param s1
      * @param s2
      * @return
@@ -38,13 +39,17 @@ public class Anagram extends abstractAlgo {
     }
 
     /**
-     *  get the number of different characters between 2 arrays of characters
+     * get the number of different characters between 2 arrays of characters
+     *
      * @param charCount1
      * @param charCount2
      * @return
      */
     private int getDelta(int[] charCount1, int[] charCount2) {
-        int sum=0;
+        if (charCount1.length != charCount2.length) {
+            return -1;
+        }
+        int sum = 0;
         for (int i = 0; i < charCount1.length; i++) {
             sum += Math.abs(charCount1[i] - charCount2[i]);
         }
@@ -52,15 +57,16 @@ public class Anagram extends abstractAlgo {
     }
 
     /**
-     *  Count the number of characters in a string
+     * Count the number of characters in a string
+     *
      * @param s1
      * @return
      */
     private int[] getCharCount(String s1) {
         int[] result = new int[NUMBER_LETTER];
         for (int i = 0; i < s1.length(); i++) {
-            char c= s1.charAt(i);
-            int offset = c - (int)'a';
+            char c = s1.charAt(i);
+            int offset = c - (int) 'a';
             result[offset]++;
 
         }
