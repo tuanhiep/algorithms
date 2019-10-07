@@ -55,16 +55,26 @@ public class RecursiveStairCase extends abstractAlgo {
     }
 
     /**
-     *  Get ways to leap by dynamic programming approach
+     * Get ways to leap by dynamic programming approach
+     *
      * @param steps
      * @return
      */
-    public int getWaysLeapDynamic(int steps){
-        int[] stairCase = new int[steps+1];
-        stairCase[0]=1;
-        stairCase[1]=1;
-        stairCase[2]=2;
-        for (int i=3;i<steps;i++) {
+    public int getWaysLeapDynamic(int steps) {
+        if (steps == 0) {
+            return 1;
+        }
+        if (steps == 1) {
+            return 1;
+        }
+        if (steps == 2) {
+            return 2;
+        }
+        int[] stairCase = new int[steps + 1];
+        stairCase[0] = 1;
+        stairCase[1] = 1;
+        stairCase[2] = 2;
+        for (int i = 3; i < steps; i++) {
             stairCase[i] = stairCase[i - 1] + stairCase[i - 2] + stairCase[3];
         }
 
@@ -73,20 +83,18 @@ public class RecursiveStairCase extends abstractAlgo {
     }
 
     /**
-     *  Get ways to leap by permutation programming approach
+     * Get ways to leap by permutation programming approach
+     *
      * @param steps
      * @return
      */
-    public int getWaysLeapPermutation(int steps){
-        int[] stairCase = new int[steps+1];
-        stairCase[0]=1;
-        stairCase[1]=1;
-        stairCase[2]=2;
-        for (int i=3;i<steps;i++) {
+    public int getWaysLeapPermutation(int steps) {
+        int[] stairCase = {1, 1, 2};
+        for (int i = 3; i < steps; i++) {
             stairCase[i] = stairCase[0] + stairCase[1] + stairCase[2];
-            stairCase[0]=stairCase[1];
-            stairCase[1]=stairCase[2];
-            stairCase[2]=stairCase[i];
+            stairCase[0] = stairCase[1];
+            stairCase[1] = stairCase[2];
+            stairCase[2] = stairCase[i];
         }
 
         return stairCase[steps];
