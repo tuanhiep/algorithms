@@ -23,9 +23,9 @@ public class QuickSort extends abstractAlgo {
 
     }
 
-    public int[] quickSort(int[] array) throws Exception {
+    public void quickSort(int[] array) throws Exception {
 
-        return quickSort(array, 0, array.length - 1);
+         quickSort(array, 0, array.length - 1);
 
 
     }
@@ -33,10 +33,7 @@ public class QuickSort extends abstractAlgo {
     public static void main(String[] args) throws Exception {
         int[] array = {4, 5, 2, 9, 5, 3, 9, 38, 4, 22, 3};
         QuickSort quickSort = new QuickSort();
-        int[] result = quickSort.quickSort(array);
-
-//        int indexPivot = quickSort.partition(array, 3, array.length-1);
-//        System.out.println(indexPivot);
+        quickSort.quickSort(array);
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + "  ");
         }
@@ -51,17 +48,15 @@ public class QuickSort extends abstractAlgo {
      * @param end
      * @return
      */
-    private int[] quickSort(int[] array, int start, int end) throws Exception {
-        if (start == end) {
-            return array;
-        }
-        if (start > end) {
-            throw new Exception("Quick Sort error");
+    private void quickSort(int[] array, int start, int end) throws Exception {
+
+        if (start >= end) {
+            return;
         }
         int pivotIndex = partition(array, start, end);
-        if (pivotIndex > start) quickSort(array, start, pivotIndex - 1);
-        if (pivotIndex + 1 < end) quickSort(array, pivotIndex + 1, end);
-        return array;
+        quickSort(array, start, pivotIndex-1);
+        quickSort(array, pivotIndex+1 , end);
+        return ;
 
 
     }
@@ -96,6 +91,28 @@ public class QuickSort extends abstractAlgo {
         array[index] = array[end];
         array[end] = temp;
         return index;
+
+    }
+    private int partitionWhile(int[] array, int start, int end){
+        int pivot = array[end];
+        while (start<end) {
+
+            while (array[start] < pivot) {
+                start++;
+            }
+            while (array[end] > pivot) {
+                end--;
+            }
+            if (start<end) {
+                int temp = array[start];
+                array[start] = array[end];
+                array[end] = temp;
+                start++;
+                end--;
+            }
+
+        }
+        return start;
 
     }
 
