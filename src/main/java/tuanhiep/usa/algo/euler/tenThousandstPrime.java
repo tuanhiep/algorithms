@@ -5,13 +5,6 @@ public class tenThousandstPrime {
         System.out.println(findPrimePosition(10001));
     }
 
-    public static long greatestCommonDivisor(long a, long b) {
-        if (a % b != 0) {
-            return greatestCommonDivisor(b, a % b);
-        } else {
-            return b;
-        }
-    }
 
     public static long findPrimePosition(int n) {
         int count=1;
