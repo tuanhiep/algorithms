@@ -3,65 +3,62 @@ package tuanhiep.usa.algo.euler;
 import java.util.HashMap;
 
 public class LongestCollatzSequence {
-    public static HashMap<Integer, Integer> memo = new HashMap<>();
+    public static HashMap<Long, Long> memo = new HashMap<>();
 
     public static void main(String[] args) {
-        memo.put(1, 1);
-        System.out.println(getNumberOfChainIteratively(1));
-        System.out.println(getNumberOfChainIteratively(2));
-        System.out.println(getNumberOfChainIteratively(4));
-        System.out.println(getNumberOfChainIteratively(8));
-        System.out.println(getNumberOfChainIteratively(16));
-        System.out.println(getNumberOfChainIteratively(5));
-        System.out.println(getNumberOfChainIteratively(10));
-        System.out.println(getNumberOfChainIteratively(20));
-        System.out.println(getNumberOfChainIteratively(40));
-        System.out.println(getNumberOfChainIteratively(13));
+        memo.put(1L, 1L);
+        System.out.println(getNumberOfChainMemorization(1));
+        System.out.println(getNumberOfChainMemorization(2));
+        System.out.println(getNumberOfChainMemorization(4));
+        System.out.println(getNumberOfChainMemorization(8));
+        System.out.println(getNumberOfChainMemorization(16));
+        System.out.println(getNumberOfChainMemorization(5));
+        System.out.println(getNumberOfChainMemorization(10));
+        System.out.println(getNumberOfChainMemorization(20));
+        System.out.println(getNumberOfChainMemorization(40));
+        System.out.println(getNumberOfChainMemorization(13));
+        System.out.println(getNumberOfChainMemorization(910107));
+        System.out.println(getNumberOfChainMemorization(837799));
         System.out.println(findNumber(1000000));
 
     }
 
     /**
-     * Iterative approach give long waiting time
+     * Iterative approach with memorization
      *
      * @param i
      * @return
      */
-    private static int getNumberOfChainIteratively(int i) {
+    private static long getNumberOfChainMemorization(long i) {
         if (memo.containsKey(i)) {
             return memo.get(i);
         }
-        int element = i;
-        int count = 0;
-        while (element > 0) {
-            if (memo.containsKey(element)) {
-                count = count + memo.get(element);
-                break;
-            }
-            if (element % 2 == 0) {
-                element = element / 2;
+        long term = i;
+        long count = 0;
+        while (term >=1) {
+
+            if (term % 2 == 0) {
+                term = term / 2;
             } else {
-                element = 3 * element + 1;
+                term = 3 * term + 1;
             }
             count++;
+            if (memo.containsKey(term)) {
+                count = count + memo.get(term);
+                break;
+            }
         }
         memo.put(i, count);
         return count;
 
     }
 
-    public static int findNumber(int limit) {
-        int max = 1;
-        int number = 1;
-        for (int i = 1; i < limit; i++) {
-            int count = 0;
-            if (memo.containsKey(i)) {
-                count = memo.get(i);
-
-            } else {
-                count = getNumberOfChainIteratively(i);
-            }
-
+    public static long findNumber(long limit) {
+        long max = 1;
+        long number = 1;
+        for (long i = 1; i < limit; i++) {
+            long count = 0;
+            count = getNumberOfChainMemorization(i);
             if (count > max) {
                 number = i;
                 max = count;
