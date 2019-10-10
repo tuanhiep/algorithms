@@ -32,9 +32,9 @@ public class HighlyDivisibleTriangleNumber {
             return memo.get(number);
         }
         int count = 0;
-        for (int i = 1; i <= number; i++) {
+        for (int i = 1; i < Math.sqrt(number)+1; i++) {
             if (number % i == 0) {
-                count++;
+                count+=2;
             }
         }
         memo.put(number, count);
