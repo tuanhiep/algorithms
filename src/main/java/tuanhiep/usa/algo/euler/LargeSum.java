@@ -3,7 +3,7 @@ package tuanhiep.usa.algo.euler;
 public class LargeSum {
     public static void main(String[] args) {
 
-        System.out.println(sumString("525", ""));
+        System.out.println(sumString("6", "4"));
 
         String input = "37107287533902102798797998220837590246510135740250" +
                 "46376937677490009712648124896970078050417018260538" +
@@ -117,7 +117,7 @@ public class LargeSum {
         for (int i = 0; i < num.length; i++) {
             sum = sumString(sum, num[i]);
         }
-        return sum.substring(sum.length()-10, sum.length());
+        return sum.substring(0, 10);
 
 
     }
@@ -149,7 +149,7 @@ public class LargeSum {
             if (memo) {
                 sum += 1;
             }
-            if (sum > 10) {
+            if (sum >= 10) {
                 memo = true;
             } else {
                 memo = false;
@@ -159,7 +159,7 @@ public class LargeSum {
 
         }
         if (memo) {
-            result="1"+result;
+            result = "1" + result;
         }
 
 
@@ -170,11 +170,8 @@ public class LargeSum {
         int lengthArray = input.length() / size;
         String[] result = new String[lengthArray];
         for (int i = 0; i < lengthArray; i++) {
-            try {
-                result[i] = input.substring(i * size, (i + 1) * size);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            result[i] = input.substring(i * size, (i + 1) * size);
+
         }
         return result;
 
