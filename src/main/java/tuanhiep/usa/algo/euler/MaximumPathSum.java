@@ -2,10 +2,10 @@ package tuanhiep.usa.algo.euler;
 
 public class MaximumPathSum {
     public static void main(String[] args) {
-        String test =   "3 " +
-                        "7 4 " +
-                        "2 4 6 " +
-                        "8 5 9 3";
+        String test = "3 " +
+                "7 4 " +
+                "2 4 6 " +
+                "8 5 9 3";
         System.out.println(findMax(test, 4));
 
 
@@ -52,7 +52,7 @@ public class MaximumPathSum {
                     firstParent = max[row - 1][col];
                 }
                 if (col - 1 >= 0) {
-                    secondParent = max[row-1][col - 1];
+                    secondParent = max[row - 1][col - 1];
                 }
 
                 max[row][col] = Math.max(firstParent + max[row][col], secondParent + max[row][col]);
@@ -60,12 +60,6 @@ public class MaximumPathSum {
             }
         }
 
-        for (int i = 0; i < max.length; i++) {
-            for (int j = 0; j < max[0].length; j++) {
-                System.out.print(max[i][j]+" ");
-            }
-            System.out.println("");
-        }
         int maxSumPath = 0;
 
         for (int col = 0; col < max[0].length; col++) {
