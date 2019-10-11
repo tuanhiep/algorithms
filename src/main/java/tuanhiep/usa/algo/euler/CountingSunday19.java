@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class CountingSunday {
+public class CountingSunday19 {
     public static void main(String[] args) {
         System.out.println(findSumSunday(1901, 2000));
     }
@@ -59,7 +59,6 @@ public class CountingSunday {
         indexes[i] = indexes[i - 1] + 30;// November
 
         return indexes;
-
     }
 
     private static long getIndexOfFirstDayYear(int year) {

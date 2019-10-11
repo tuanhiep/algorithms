@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class MaximumPathSum {
+public class MaximumPathSum18 {
     public static void main(String[] args) {
         String test = "3 " +
                 "7 4 " +

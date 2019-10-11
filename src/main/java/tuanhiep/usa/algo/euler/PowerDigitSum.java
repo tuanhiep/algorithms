@@ -29,8 +29,8 @@ public class PowerDigitSum {
         int memory=0;
         for (int i= s.length()-1;i>=0;i--) {
             int x= Character.getNumericValue(s.charAt(i))*a;
-            int modulo= memory+ x%10;
-            memory =x/10;
+            int modulo= (memory+ x)%10;
+            memory =(memory+ x)/10;
             result=String.valueOf(modulo)+result;
 
         }
