@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class CountingSunday19 {
+public class CountingSunday_19 {
     public static void main(String[] args) {
         System.out.println(findSumSunday(1901, 2000));
     }

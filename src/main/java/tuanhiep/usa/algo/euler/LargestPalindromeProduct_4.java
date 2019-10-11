@@ -2,7 +2,7 @@ package tuanhiep.usa.algo.euler;
 
 import static java.lang.Math.pow;
 
-public class LargestPalindromeProduct {
+public class LargestPalindromeProduct_4 {
     public static void main(String[] args) {
         long[] result= findLargestPalindrome();
         System.out.println(result[0]+"    "+result[1]);

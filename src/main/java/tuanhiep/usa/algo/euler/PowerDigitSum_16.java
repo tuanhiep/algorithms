@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class PowerDigitSum {
+public class PowerDigitSum_16 {
     public static void main(String[] args) {
         System.out.println(multiply("15",2));
         System.out.println(power(3,3));

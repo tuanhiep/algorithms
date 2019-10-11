@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class FactorialDigitSum20 {
+public class FactorialDigitSum_20 {
     public static void main(String[] args) {
         double result = factorialReal(10);
         System.out.println(result + " --- " + sumDigitReal(result));

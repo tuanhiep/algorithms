@@ -1,8 +1,8 @@
 package tuanhiep.usa.algo.euler;
 
-public class SmallestMultiple {
+public class SmallestMultiple_5 {
     public static void main(String[] args) {
-        System.out.println(findLargestCommonMultiple(10));
+        System.out.println(findLeastCommonMultiple(10));
     }
 
 
@@ -14,7 +14,7 @@ public class SmallestMultiple {
 
     }
 
-    private static long findLargestCommonMultiple(long n) {
+    private static long findLeastCommonMultiple(long n) {
         long ans = 1;
         for (long i = 1; i <= n; i++)
             ans = (ans * i) / (findGreatestCommonDivisor(ans, i));
