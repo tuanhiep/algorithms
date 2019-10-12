@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class SummationPrime {
+public class SummationPrime_10 {
     public static void main(String[] args) {
         System.out.println(findSumPrime(2000000));
     }
@@ -21,7 +21,7 @@ public class SummationPrime {
         if (n==1||n==2) {
             return true;
         }
-        for (int j = 2; j < Math.pow(n,0.5)+1; j++) {
+        for (int j = 2; j < Math.sqrt(n)+1; j++) {
             if (n % j == 0) {
                 return  false;
             }

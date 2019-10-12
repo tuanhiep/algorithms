@@ -2,12 +2,12 @@ package tuanhiep.usa.algo.euler;
 
 import java.util.HashMap;
 
-public class HighlyDivisibleTriangleNumber {
+public class HighlyDivisibleTriangleNumber_12 {
     public static void main(String[] args) {
         System.out.println(findTriangleNumber(500));
     }
 
-   public static HashMap<Integer, Integer> memo = new HashMap<>();
+    public static HashMap<Integer, Integer> memo = new HashMap<>();
 
     public static long findTriangleNumber(int n) {
 
@@ -32,9 +32,14 @@ public class HighlyDivisibleTriangleNumber {
             return memo.get(number);
         }
         int count = 0;
-        for (int i = 1; i < Math.sqrt(number)+1; i++) {
+        for (int i = 1; i < Math.sqrt(number) + 1; i++) {
             if (number % i == 0) {
-                count+=2;
+                if (i != number / i) {
+                    count += 2;
+
+                } else {
+                    count++;
+                }
             }
         }
         memo.put(number, count);

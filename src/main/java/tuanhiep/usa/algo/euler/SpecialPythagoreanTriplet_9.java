@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class SpecialPythagoreanTriplet {
+public class SpecialPythagoreanTriplet_9 {
     public static void main(String[] args) {
         System.out.println(findTriplet(1000));
 

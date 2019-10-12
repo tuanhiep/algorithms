@@ -2,7 +2,7 @@ package tuanhiep.usa.algo.euler;
 
 import java.util.HashMap;
 
-public class LongestCollatzSequence {
+public class LongestCollatzSequence_14 {
     public static HashMap<Long, Long> memo = new HashMap<>();
 
     public static void main(String[] args) {
