@@ -4,11 +4,12 @@ import java.util.LinkedList;
 
 public class LexicographicPermutation_24 {
     public static void main(String[] args) {
-        LinkedList<Integer> queue= initializeQueue(2);
-        System.out.println(findPermutation(1,queue));
-        System.out.println(findPermutation(2,queue));
-        queue= initializeQueue(9);
-        System.out.println(findPermutation(1000000,queue));
+        LinkedList<Integer> queue = initializeQueue(2);
+        System.out.println(findPermutation(1, queue));
+        System.out.println(findPermutation(2, queue));
+        System.out.println(findPermutation(3, queue));
+        queue = initializeQueue(9);
+        System.out.println(findPermutation(1000000, queue));
     }
 
     private static LinkedList<Integer> initializeQueue(int n) {
@@ -25,16 +26,22 @@ public class LexicographicPermutation_24 {
         int globalPosition = n;
         String result = "";
         for (int i = 0; i < size; i++) {
-            int base = factorial(queue.size() - 1);
-            int index=0;
-            if (globalPosition > base) {
-                globalPosition = globalPosition % base;
-                index = globalPosition - 1;
-            } else {
-                globalPosition = globalPosition % base;
-
+            int chunk = 0;
+            if (queue.size() > 1) {
+                int base = factorial(queue.size() - 1);
+                int divisor = globalPosition / base;
+                int modulo = globalPosition % base;
+                int position = 0;
+                if (modulo == 0) {
+                    chunk = divisor - 1;
+                    position = base;
+                } else {
+                    chunk = divisor;
+                    position = modulo;
+                }
+                globalPosition = position;
             }
-            String nextElement = String.valueOf(queue.remove(index ));
+            String nextElement = String.valueOf(queue.remove(chunk));
             result += nextElement;
 
         }
@@ -43,12 +50,12 @@ public class LexicographicPermutation_24 {
     }
 
     private static int factorial(int n) {
-        if (n==0) {
+        if (n == 0) {
             return 1;
         }
-        int factorial=1;
+        int factorial = 1;
         for (int i = 1; i <= n; i++) {
-            factorial*=i;
+            factorial *= i;
         }
         return factorial;
     }
