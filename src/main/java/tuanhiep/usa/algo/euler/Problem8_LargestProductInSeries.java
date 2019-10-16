@@ -26,7 +26,7 @@ package tuanhiep.usa.algo.euler;
  *
  * Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
  */
-public class LargestProductInSeries_8 {
+public class Problem8_LargestProductInSeries {
     public static void main(String[] args) {
         String s = "73167176531330624919225119674426574742355349194934" +
                 "96983520312774506326239578318016984801869478851843" +

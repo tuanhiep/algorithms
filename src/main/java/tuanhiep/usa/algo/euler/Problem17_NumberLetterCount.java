@@ -2,7 +2,7 @@ package tuanhiep.usa.algo.euler;
 
 import java.util.HashMap;
 
-public class NumberLetterCount_17 {
+public class Problem17_NumberLetterCount {
     static HashMap<Integer, Integer> alpha = new HashMap<>();
 
 

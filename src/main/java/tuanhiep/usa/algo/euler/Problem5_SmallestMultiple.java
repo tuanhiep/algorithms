@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class SmallestMultiple_5 {
+public class Problem5_SmallestMultiple {
     public static void main(String[] args) {
         System.out.println(findLeastCommonMultiple(10));
     }

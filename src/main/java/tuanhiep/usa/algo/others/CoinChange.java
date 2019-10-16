@@ -56,7 +56,7 @@ public class CoinChange extends abstractAlgo {
         if (money == 0) {
             return 1;
         }
-        if (index > coins.length) {
+        if (index >= coins.length) {
             return 0;
         }
         int amountWithCoins = 0;

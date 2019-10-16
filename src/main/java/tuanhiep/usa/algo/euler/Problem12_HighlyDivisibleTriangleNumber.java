@@ -2,7 +2,7 @@ package tuanhiep.usa.algo.euler;
 
 import java.util.HashMap;
 
-public class HighlyDivisibleTriangleNumber_12 {
+public class Problem12_HighlyDivisibleTriangleNumber {
     public static void main(String[] args) {
         System.out.println(findTriangleNumber(500));
     }

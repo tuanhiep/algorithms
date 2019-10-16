@@ -3,7 +3,7 @@ package tuanhiep.usa.algo.euler;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class NonAbundantSum_23 {
+public class Problem23_NonAbundantSum {
     public static void main(String[] args) {
 
         System.out.println(getDivisor(2));

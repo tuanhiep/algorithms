@@ -2,7 +2,7 @@ package tuanhiep.usa.algo.euler;
 
 import java.util.LinkedList;
 
-public class LexicographicPermutation_24 {
+public class Problem24_LexicographicPermutation {
     public static void main(String[] args) {
         LinkedList<Integer> queue = initializeQueue(2);
         System.out.println(findPermutation(1, queue));

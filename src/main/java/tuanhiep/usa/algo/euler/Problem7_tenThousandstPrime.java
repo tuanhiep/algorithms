@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class tenThousandstPrime {
+public class Problem7_tenThousandstPrime {
     public static void main(String[] args) {
         System.out.println(findPrimePosition(10001));
     }
@@ -14,7 +14,7 @@ public class tenThousandstPrime {
             if (n == 1 || n == 2) {
                 return n;
             }
-            for (int j = 2; j < number; j++) {
+            for (int j = 2; j < Math.sqrt(number)+1; j++) {
                 if (number%j==0) {
                     number++;
                     prime=false;

@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class LargestPrimeFactor_3 {
+public class Problem3_LargestPrimeFactor {
     public static void main(String[] args) {
         System.out.println(findLargestPrimeFactor(600851475143L));
     }

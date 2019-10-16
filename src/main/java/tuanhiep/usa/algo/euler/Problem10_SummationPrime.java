@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class SummationPrime_10 {
+public class Problem10_SummationPrime {
     public static void main(String[] args) {
         System.out.println(findSumPrime(2000000));
     }

@@ -1,10 +1,10 @@
 package tuanhiep.usa.algo.euler;
 
-public class EvenFibonacci_2 {
+public class Problem2_EvenFibonacci {
 
     public static void main(String[] args) {
 
-        System.out.println(EvenFibonacci_2.sumEvenFibonacci(4000000));
+        System.out.println(Problem2_EvenFibonacci.sumEvenFibonacci(4000000));
 
     }
 

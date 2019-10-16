@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class AmicableNumber_21 {
+public class Problem21_AmicableNumber {
     public static void main(String[] args) {
         System.out.println(findSum(10000));
         System.out.println(getSumDivisor(220));

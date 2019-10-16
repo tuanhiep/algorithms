@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class SumSquareDifference {
+public class Problem6_SumSquareDifference {
     public static void main(String[] args) {
         System.out.println(findSumSquareDifference(100));
     }

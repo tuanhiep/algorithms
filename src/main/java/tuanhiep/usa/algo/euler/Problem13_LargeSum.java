@@ -1,6 +1,6 @@
 package tuanhiep.usa.algo.euler;
 
-public class LargeSum {
+public class Problem13_LargeSum {
     public static void main(String[] args) {
 
         System.out.println(sumString("6", "4"));
