@@ -1,6 +1,5 @@
 package tuanhiep.usa.algo.euler;
 
-import java.util.HashMap;
 import java.util.HashSet;
 
 public class Problem38_PandigitalMultiples {
@@ -10,8 +9,9 @@ public class Problem38_PandigitalMultiples {
 
     public static void main(String[] args) {
         initDigit();
-        System.out.println(concatenate(192, 3));
-        System.out.println(isPandigital(concatenate(192, 3)));
+        System.out.println(concatenateProduct(192, 3));
+        System.out.println(findLargest(192));
+        System.out.println(isPandigital(concatenateProduct(192, 3)));
         System.out.println(findLargestPandigital());
     }
 
@@ -23,7 +23,7 @@ public class Problem38_PandigitalMultiples {
 
     private static long findLargestPandigital() {
         long max = 1;
-        for (int i = 1; i < 999999999; i++) {
+        for (int i = 1; i < 10000; i++) {// Because if i exceed 10000 then i*1 and i*2 have total number of digits exceeds 9 digits
             long largest = findLargest(i);
             if (largest > max) {
                 max = largest;
@@ -35,14 +35,15 @@ public class Problem38_PandigitalMultiples {
 
     private static long findLargest(int number) {
 
-        long max = -1;
+        long max = 123456789;
         int n = 1;
         int product = 1;
-        while (product < 999999999) {
-            product = concatenate(number, n);
+        while (n < 7) { // Because the min of number is 2, maximum of n is 7 so that the product doesn't exceed 9 digits
+            product = concatenateProduct(number, n);
             if (product != -1 && isPandigital(product) && product > max && product < 999999999) {
                 max = product;
             }
+            n++;
         }
         return max;
 
@@ -67,7 +68,7 @@ public class Problem38_PandigitalMultiples {
 
     }
 
-    private static int concatenate(int number, int n) {
+    private static int concatenateProduct(int number, int n) {
         if (n == 1) {
             if (isPandigital(number)) {
                 return number;
