@@ -2,7 +2,7 @@ package tuanhiep.usa.algo.euler;
 
 import java.util.HashMap;
 
-public class LatticePaths {
+public class Problem15_LatticePaths {
     HashMap<String, Long> memo = new HashMap<>();
 
     public static void main(String[] args) {
