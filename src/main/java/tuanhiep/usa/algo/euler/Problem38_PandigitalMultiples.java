@@ -11,7 +11,7 @@ public class Problem38_PandigitalMultiples {
         initDigit();
         System.out.println(concatenateProduct(192, 3));
         System.out.println(findLargest(192));
-        System.out.println(isPandigital(concatenateProduct(192, 3)));
+        System.out.println(isPandigital(concatenateProduct(192, 3),9));
         System.out.println(findLargestPandigital());
     }
 
@@ -40,7 +40,7 @@ public class Problem38_PandigitalMultiples {
         int product = 1;
         while (n < 7) { // Because the min of number is 2, maximum of n is 7 so that the product doesn't exceed 9 digits
             product = concatenateProduct(number, n);
-            if (product != -1 && isPandigital(product) && product > max && product < 999999999) {
+            if (product != -1 && isPandigital(product,9) && product > max && product < 999999999) {
                 max = product;
             }
             n++;
@@ -50,19 +50,24 @@ public class Problem38_PandigitalMultiples {
 
     }
 
-    private static boolean isPandigital(int product) {
-        if (memo.contains(product)) {
-            return true;
-        }
-        String toCheck = String.valueOf(product);
-        HashSet<Integer> set = new HashSet<>();
-        for (int i = 0; i < toCheck.length(); i++) {
-            set.add(Character.getNumericValue(toCheck.charAt(i)));
-        }
-        if (set.size() != 9) {
+    private static boolean isPandigital(int product, int n) {
+        String tocheck = String.valueOf(product);
+        if (tocheck.length() != n) {
             return false;
         }
-        memo.add(product);
+        HashSet<Integer> set = new HashSet<>();
+        for (int i = 0; i < tocheck.length(); i++) {
+            set.add(Character.getNumericValue(tocheck.charAt(i)));
+        }
+
+        if (set.size() != n) {
+            return false;
+        }
+        set.removeAll(digits);
+        if (set.size() > 0) {
+            return false;
+        }
+
         return true;
 
 
@@ -70,7 +75,7 @@ public class Problem38_PandigitalMultiples {
 
     private static int concatenateProduct(int number, int n) {
         if (n == 1) {
-            if (isPandigital(number)) {
+            if (isPandigital(number,9)) {
                 return number;
             }
             return -1;
