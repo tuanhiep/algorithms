@@ -62,7 +62,7 @@ public class Problem38_PandigitalMultiples {
         if (set.size() != 9) {
             return false;
         }
-        memo.add((int) product);
+        memo.add(product);
         return true;
 
 
@@ -80,7 +80,7 @@ public class Problem38_PandigitalMultiples {
         HashSet<Integer> comparingSet = (HashSet<Integer>) digits.clone();
         for (int i = 1; i <= n; i++) {
             int product = number * i;
-            if (!validDigit(comparingSet,product)) {
+            if (!validDigit(comparingSet, product)) {
                 return -1;
             }
             result += String.valueOf(product);
@@ -96,16 +96,13 @@ public class Problem38_PandigitalMultiples {
         for (int i = 0; i < size; i++) {
             comparingSet.remove(Character.getNumericValue(pro.charAt(i)));
         }
-        if (initialSizeSet -comparingSet.size()!= size) {
+        if (initialSizeSet - comparingSet.size() != size) {
             return false;
         }
         return true;
 
 
-
     }
-
-
 
 
 }
