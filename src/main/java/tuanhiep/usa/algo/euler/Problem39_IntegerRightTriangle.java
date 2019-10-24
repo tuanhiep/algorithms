@@ -31,8 +31,8 @@ public class Problem39_IntegerRightTriangle {
     private static int countSolution(int p) {
         considered.clear();
         int count = 0;
-        for (int a = 1; a < p; a++) {
-            for (int b = 1; b < p; b++) {
+        for (int a = 1; a < p-2*a; a++) {
+            for (int b = 1; b < p-2*a; b++) {
                 int squareA, squareB, squareC;
                 if (considered.contains(a + "-" + b)) {
                     continue;
