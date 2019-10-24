@@ -39,6 +39,9 @@ public class Problem39_IntegerRightTriangle {
                     continue;
                 } else {
                     int c= p-a-b;
+                    if (c > a + b) {
+                        continue;
+                    }
                     if (memoSquare.containsKey(a)) {
                         squareA = memoSquare.get(a);
                     }
