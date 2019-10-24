@@ -15,9 +15,9 @@ public class Problem39_IntegerRightTriangle {
     }
 
     private static int findNumberSolution(int upper) {
-        int max = 0;
+        int max = 3;
         int bestP=0;
-        for (int p = 1; p <= upper; p++) {
+        for (int p = 120; p <= upper; p++) {
             int count = countSolution(p);
             if (count > max) {
                 max = count;
