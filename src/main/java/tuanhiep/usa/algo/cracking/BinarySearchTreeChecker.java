@@ -1,25 +1,7 @@
-package tuanhiep.usa.algo.others;
+package tuanhiep.usa.algo.cracking;
 
-import tuanhiep.usa.common.abstractAlgo;
-
-public class BinarySearchTreeChecker extends abstractAlgo {
-    @Override
-    public void setUpDefault() {
-
-    }
-
-    @Override
-    public void run() {
-
-    }
-
-    @Override
-    public Object getResult() {
-        return null;
-    }
-
-    @Override
-    public void print() {
+public class BinarySearchTreeChecker {
+    public static void main(String[] args) {
 
     }
 

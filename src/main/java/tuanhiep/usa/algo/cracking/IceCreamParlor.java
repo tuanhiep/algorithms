@@ -1,28 +1,10 @@
-package tuanhiep.usa.algo.others;
-
-import tuanhiep.usa.common.abstractAlgo;
+package tuanhiep.usa.algo.cracking;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class IceCreamParlor extends abstractAlgo {
-    @Override
-    public void setUpDefault() {
-
-    }
-
-    @Override
-    public void run() {
-
-    }
-
-    @Override
-    public Object getResult() {
-        return null;
-    }
-
-    @Override
-    public void print() {
+public class IceCreamParlor {
+    public static void main(String[] args) {
 
     }
 

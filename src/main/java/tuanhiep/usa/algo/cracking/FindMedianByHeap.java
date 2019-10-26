@@ -1,50 +1,35 @@
-package tuanhiep.usa.algo.others;
-
-import tuanhiep.usa.common.abstractAlgo;
+package tuanhiep.usa.algo.cracking;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class FindMedianByHeap extends abstractAlgo {
-    @Override
-    public void setUpDefault() {
-
-    }
-
-    @Override
-    public void run() {
-
-    }
-
-    @Override
-    public Object getResult() {
-        return null;
-    }
-
-    @Override
-    public void print() {
+public class FindMedianByHeap {
+    public static void main(String[] args) {
 
     }
 
     /**
-     *  Get the continous medians for sequence of number given from an array
+     * Get the continous medians for sequence of number given from an array
+     *
      * @param array
      * @return
      */
     public double[] getMedian(int[] array) {
-        PriorityQueue<Integer> lower= new PriorityQueue<Integer>(new Comparator<Integer>() {
+        // max Heap
+        PriorityQueue<Integer> lower = new PriorityQueue<Integer>(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
-                return -1* o1.compareTo(o2);
+                return -1 * o1.compareTo(o2);
             }
         });
+        // min Heap
         PriorityQueue<Integer> higher = new PriorityQueue<>();
         double[] medians = new double[array.length];
 
-        for (int number=0; number<array.length;number++) {
+        for (int number = 0; number < array.length; number++) {
             addNumberHeap(array[number], lower, higher);
-            reBalanceHeap(lower,higher);
-            medians[number]= getMedianHeap(lower,higher);
+            reBalanceHeap(lower, higher);
+            medians[number] = getMedianHeap(lower, higher);
         }
         return medians;
 
@@ -53,13 +38,14 @@ public class FindMedianByHeap extends abstractAlgo {
 
     /**
      * Rebalance the size of 2 heaps
+     *
      * @param lower
      * @param higher
      */
     private void reBalanceHeap(PriorityQueue<Integer> lower, PriorityQueue<Integer> higher) {
         PriorityQueue<Integer> biggerHeap = lower.size() > higher.size() ? lower : higher;
         PriorityQueue<Integer> smallerHeap = lower.size() > higher.size() ? higher : lower;
-        if ((biggerHeap.size()-smallerHeap.size())>=2) {
+        if ((biggerHeap.size() - smallerHeap.size()) >= 2) {
             smallerHeap.add(biggerHeap.poll());
 
         }
@@ -67,6 +53,7 @@ public class FindMedianByHeap extends abstractAlgo {
 
     /**
      * Add the new number to one of 2 heaps
+     *
      * @param number
      * @param lower
      * @param higher
@@ -84,19 +71,20 @@ public class FindMedianByHeap extends abstractAlgo {
 
     /**
      * Get the median from 2 heaps
+     *
      * @param lower
      * @param higher
      * @return
      */
     private double getMedianHeap(PriorityQueue<Integer> lower, PriorityQueue<Integer> higher) {
-        if (higher.size()>lower.size()) {
+        if (higher.size() > lower.size()) {
             return higher.peek();
         }
-        if (higher.size()<lower.size()) {
+        if (higher.size() < lower.size()) {
             return lower.peek();
         }
         if (higher.size() == lower.size()) {
-            return (higher.peek()+(double)lower.peek())/2;
+            return (higher.peek() + (double) lower.peek()) / 2;
         }
         return -1;
     }

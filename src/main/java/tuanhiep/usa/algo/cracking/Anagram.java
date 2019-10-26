@@ -1,27 +1,9 @@
-package tuanhiep.usa.algo.others;
+package tuanhiep.usa.algo.cracking;
 
-import tuanhiep.usa.common.abstractAlgo;
-
-public class Anagram extends abstractAlgo {
+public class Anagram {
     public static int NUMBER_LETTER = 26;
 
-    @Override
-    public void setUpDefault() {
-
-    }
-
-    @Override
-    public void run() {
-
-    }
-
-    @Override
-    public Object getResult() {
-        return null;
-    }
-
-    @Override
-    public void print() {
+    public static void main(String[] args) {
 
     }
 

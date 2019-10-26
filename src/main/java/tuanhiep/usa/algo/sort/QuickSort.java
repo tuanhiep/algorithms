@@ -1,34 +1,10 @@
 package tuanhiep.usa.algo.sort;
 
-import tuanhiep.usa.common.*;
-
 /**
  * Algorithm to do the quick sorting for an array
  */
-public class QuickSort extends abstractAlgo {
-    public void setUpDefault() {
+public class QuickSort {
 
-
-    }
-
-    public void run() {
-
-    }
-
-    public Object getResult() {
-        return null;
-    }
-
-    public void print() {
-
-    }
-
-    public void quickSort(int[] array) throws Exception {
-
-         quickSort(array, 0, array.length - 1);
-
-
-    }
 
     public static void main(String[] args) throws Exception {
         int[] array = {4, 5, 2, 9, 5, 3, 9, 38, 4, 22, 3};
@@ -37,6 +13,13 @@ public class QuickSort extends abstractAlgo {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + "  ");
         }
+
+    }
+
+    public void quickSort(int[] array) throws Exception {
+
+        quickSort(array, 0, array.length - 1);
+
 
     }
 
@@ -54,9 +37,9 @@ public class QuickSort extends abstractAlgo {
             return;
         }
         int pivotIndex = partition(array, start, end);
-        quickSort(array, start, pivotIndex-1);
-        quickSort(array, pivotIndex+1 , end);
-        return ;
+        quickSort(array, start, pivotIndex - 1);
+        quickSort(array, pivotIndex + 1, end);
+        return;
 
 
     }
@@ -93,9 +76,10 @@ public class QuickSort extends abstractAlgo {
         return index;
 
     }
-    private int partitionWhile(int[] array, int start, int end){
+
+    private int partitionWhile(int[] array, int start, int end) {
         int pivot = array[end];
-        while (start<end) {
+        while (start < end) {
 
             while (array[start] < pivot) {
                 start++;
@@ -103,7 +87,7 @@ public class QuickSort extends abstractAlgo {
             while (array[end] > pivot) {
                 end--;
             }
-            if (start<end) {
+            if (start < end) {
                 int temp = array[start];
                 array[start] = array[end];
                 array[end] = temp;

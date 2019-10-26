@@ -1,28 +1,9 @@
-package tuanhiep.usa.algo.others;
+package tuanhiep.usa.algo.cracking;
 
-import tuanhiep.usa.common.abstractAlgo;
-
-import java.util.PriorityQueue;
 import java.util.Stack;
 
-public class QueueFromStacks extends abstractAlgo {
-    @Override
-    public void setUpDefault() {
-
-    }
-
-    @Override
-    public void run() {
-
-    }
-
-    @Override
-    public Object getResult() {
-        return null;
-    }
-
-    @Override
-    public void print() {
+public class QueueFromStacks {
+    public static void main(String[] args) {
 
     }
 
@@ -45,6 +26,9 @@ public class QueueFromStacks extends abstractAlgo {
 
     }
 
+    /**
+     * Move all element from newest on top stack to oldest(reversedStack) on top stack while reversedStack is empty
+     */
     private void shiftStack() {
         if (reversedStack.isEmpty()) {
             while (!stack.isEmpty()) {

@@ -1,27 +1,10 @@
-package tuanhiep.usa.algo.others;
-
-import tuanhiep.usa.common.abstractAlgo;
+package tuanhiep.usa.algo.cracking;
 
 import java.util.Stack;
 
-public class BalancedParentheseExpression extends abstractAlgo {
-    @Override
-    public void setUpDefault() {
+public class BalancedParenthesesExpression {
 
-    }
-
-    @Override
-    public void run() {
-
-    }
-
-    @Override
-    public Object getResult() {
-        return null;
-    }
-
-    @Override
-    public void print() {
+    public static void main(String[] args) {
 
     }
 

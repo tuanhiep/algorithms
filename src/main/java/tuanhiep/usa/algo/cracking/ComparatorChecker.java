@@ -1,4 +1,4 @@
-package tuanhiep.usa.algo.others;
+package tuanhiep.usa.algo.cracking;
 
 import java.util.Comparator;
 

@@ -1,33 +1,14 @@
-package tuanhiep.usa.algo.others;
+package tuanhiep.usa.algo.cracking;
 
-import tuanhiep.usa.common.abstractAlgo;
-
-import java.util.LinkedList;
-
-public class DetectCycleLinkedList extends abstractAlgo {
-    @Override
-    public void setUpDefault() {
-
-    }
-
-    @Override
-    public void run() {
-
-    }
-
-    @Override
-    public Object getResult() {
-        return null;
-    }
-
-    @Override
-    public void print() {
+public class DetectCycleLinkedList {
+    public static void main(String[] args) {
 
     }
 
     /**
      * check if LinkedList has a cycle by let 2 car: slow and fast run
      * if 2 car meet again then the cycle exists
+     *
      * @param head
      * @return
      */

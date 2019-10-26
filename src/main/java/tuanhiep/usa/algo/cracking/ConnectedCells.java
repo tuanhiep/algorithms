@@ -1,30 +1,13 @@
-package tuanhiep.usa.algo.others;
+package tuanhiep.usa.algo.cracking;
 
-import tuanhiep.usa.common.abstractAlgo;
-
-public class ConnectedCells extends abstractAlgo {
-    @Override
-    public void setUpDefault() {
-
-    }
-
-    @Override
-    public void run() {
-
-    }
-
-    @Override
-    public Object getResult() {
-        return null;
-    }
-
-    @Override
-    public void print() {
+public class ConnectedCells {
+    public static void main(String[] args) {
 
     }
 
     /**
-     *  Get the biggest region contains 1 in matrix of value 0 and 1
+     * Get the biggest region contains 1 in matrix of value 0 and 1
+     *
      * @param matrix
      * @return
      */
@@ -42,7 +25,8 @@ public class ConnectedCells extends abstractAlgo {
     }
 
     /**
-     *  Get the size of region which contains 1 in matrix using DFS
+     * Get the size of region which contains 1 in matrix using DFS
+     *
      * @param matrix
      * @param row
      * @param column
@@ -56,6 +40,7 @@ public class ConnectedCells extends abstractAlgo {
         for (int i = row - 1; i < row + 1; i++) {
             for (int j = column - 1; j < column + 1; j++) {
                 if ((i != row || j != column) && matrix[i][j] == 1) {
+                    // clear the checked slot to not check it again
                     matrix[i][j] = 2;
                     sizeRegion += getRegion(matrix, i, j);
                 }

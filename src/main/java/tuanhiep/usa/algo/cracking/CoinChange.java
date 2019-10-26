@@ -1,43 +1,12 @@
-package tuanhiep.usa.algo.others;
+package tuanhiep.usa.algo.cracking;
 
-import tuanhiep.usa.common.abstractAlgo;
-import tuanhiep.usa.common.utils.TypeAlgo;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 
-public class CoinChange extends abstractAlgo {
-
-
-    @Override
-    public void setUpDefault() {
-        ArrayList parametersDefault = new ArrayList();
-        int total = 27;
-        int[] denominations = {25, 10, 5, 1};
-        parametersDefault.add(total);
-        parametersDefault.add(denominations);
-        this.setParameters(parametersDefault);
-        this.setName("Algorithm solves Coin Change problem");
-        this.setType(TypeAlgo.DATA_STRUCTURE);
-        this.setDescription("We use algorithm to solve the problem of making change with a number of predefined denominations ");
+public class CoinChange {
+    public static void main(String[] args) {
 
     }
 
-    @Override
-    public void run() {
-
-
-    }
-
-    @Override
-    public Object getResult() {
-        return null;
-    }
-
-    @Override
-    public void print() {
-
-    }
 
     public static long makeChange(int[] coins, int money) {
         return makeChange(coins, money, 0, new HashMap<String, Long>());

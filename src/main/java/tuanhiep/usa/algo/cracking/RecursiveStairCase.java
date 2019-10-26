@@ -1,27 +1,7 @@
-package tuanhiep.usa.algo.others;
+package tuanhiep.usa.algo.cracking;
 
-import tuanhiep.usa.common.abstractAlgo;
-
-import java.util.Arrays;
-
-public class RecursiveStairCase extends abstractAlgo {
-    @Override
-    public void setUpDefault() {
-
-    }
-
-    @Override
-    public void run() {
-
-    }
-
-    @Override
-    public Object getResult() {
-        return null;
-    }
-
-    @Override
-    public void print() {
+public class RecursiveStairCase {
+    public static void main(String[] args) {
 
     }
 
@@ -90,14 +70,15 @@ public class RecursiveStairCase extends abstractAlgo {
      */
     public int getWaysLeapPermutation(int steps) {
         int[] stairCase = {1, 1, 2};
+        int count=0;
         for (int i = 3; i < steps; i++) {
-            stairCase[i] = stairCase[0] + stairCase[1] + stairCase[2];
+            count = stairCase[0] + stairCase[1] + stairCase[2];
             stairCase[0] = stairCase[1];
             stairCase[1] = stairCase[2];
             stairCase[2] = stairCase[i];
         }
 
-        return stairCase[steps];
+        return stairCase[2];
 
     }
 
