@@ -1,10 +1,15 @@
 package tuanhiep.usa.algo.euler;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 
-
+/**
+ * The number 3797 has an interesting property. Being prime itself, it is possible to continuously remove digits from left to right, and remain prime at each stage: 3797, 797, 97, and 7. Similarly we can work from right to left: 3797, 379, 37, and 3.
+ *
+ * Find the sum of the only eleven primes that are both truncatable from left to right and right to left.
+ *
+ * NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
+ */
 public class Problem37_TruncatablePrime {
     public static HashSet<Integer> ending = new HashSet<Integer>();
 
@@ -14,10 +19,10 @@ public class Problem37_TruncatablePrime {
         ending.add(5);
         ending.add(7);
         System.out.println(checkTruncatablePrime(3797));
-        System.out.println(sumElevenPrimes(11));
+        System.out.println(sumPrimes(11));
     }
 
-    private static long sumElevenPrimes(int total) {
+    private static long sumPrimes(int total) {
         int count = 0;
         long number = 8;
         long sum = 0;

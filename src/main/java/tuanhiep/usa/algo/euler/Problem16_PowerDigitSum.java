@@ -1,5 +1,10 @@
 package tuanhiep.usa.algo.euler;
 
+/**
+ * 2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+ *
+ * What is the sum of the digits of the number 21000?
+ */
 public class Problem16_PowerDigitSum {
     public static void main(String[] args) {
         System.out.println(multiply("15",2));

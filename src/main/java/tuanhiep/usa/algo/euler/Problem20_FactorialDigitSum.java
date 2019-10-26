@@ -1,5 +1,13 @@
 package tuanhiep.usa.algo.euler;
 
+/**
+ * n! means n × (n − 1) × ... × 3 × 2 × 1
+ *
+ * For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,
+ * and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
+ *
+ * Find the sum of the digits in the number 100!
+ */
 public class Problem20_FactorialDigitSum {
     public static void main(String[] args) {
         double result = factorialReal(10);
@@ -103,6 +111,8 @@ public class Problem20_FactorialDigitSum {
         return result;
     }
 
+
+    // Use double type in java but this solution has limitation of double type java
     private static long sumDigitReal(double number) {
         int sum = 0;
         long digit = getLengthReal(number);

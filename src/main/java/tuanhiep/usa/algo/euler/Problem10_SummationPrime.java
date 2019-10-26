@@ -1,5 +1,10 @@
 package tuanhiep.usa.algo.euler;
 
+/**
+ * The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+ *
+ * Find the sum of all the primes below two million.
+ */
 public class Problem10_SummationPrime {
     public static void main(String[] args) {
         System.out.println(findSumPrime(2000000));

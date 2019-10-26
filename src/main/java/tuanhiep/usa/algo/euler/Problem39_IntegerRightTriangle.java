@@ -3,6 +3,13 @@ package tuanhiep.usa.algo.euler;
 import java.util.HashMap;
 import java.util.HashSet;
 
+/**
+ * If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
+ *
+ * {20,48,52}, {24,45,51}, {30,40,50}
+ *
+ * For which value of p ≤ 1000, is the number of solutions maximised?
+ */
 public class Problem39_IntegerRightTriangle {
     public static HashSet<String> considered = new HashSet<>();
     public static HashMap<Integer,Integer> memoSquare = new HashMap<>();

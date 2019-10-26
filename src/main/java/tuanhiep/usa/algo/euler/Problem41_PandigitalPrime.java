@@ -2,6 +2,11 @@ package tuanhiep.usa.algo.euler;
 
 import java.util.ArrayList;
 
+/**
+ * We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
+ * <p>
+ * What is the largest n-digit pandigital prime that exists?
+ */
 public class Problem41_PandigitalPrime {
     public static void main(String[] args) {
         System.out.println(findLargestPandigitalPrime());
@@ -25,8 +30,8 @@ public class Problem41_PandigitalPrime {
             pandigital += i;
         }
         ArrayList<String> pandigitals = generateAllPermutation(Integer.parseInt(pandigital));
-        int max=0;
-        for (String num:pandigitals) {
+        int max = 0;
+        for (String num : pandigitals) {
             int number = Integer.parseInt(num);
             if (isPrime(number) && number > max) {
                 max = number;
@@ -35,6 +40,7 @@ public class Problem41_PandigitalPrime {
         return max;
 
     }
+
     public static boolean isPrime(long n) {
         if (n == 1 || n == 2) {
             return true;
@@ -46,6 +52,7 @@ public class Problem41_PandigitalPrime {
         }
         return true;
     }
+
     private static ArrayList<String> generateAllPermutation(int number) {
         ArrayList<String> list = new ArrayList<>();
         String num = String.valueOf(number);
