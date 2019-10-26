@@ -1,4 +1,7 @@
-package tuanhiep.usa.algo.search.graph;
+package tuanhiep.usa.algo.cracking;
+
+import tuanhiep.usa.algo.search.graph.Graph;
+import tuanhiep.usa.algo.search.graph.Node;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -17,15 +20,15 @@ public class ShortestReach {
      * @param graph
      * @return
      */
-    public HashMap<Node, Integer> shortestReach(int startId, Graph graph) {
+    public HashMap<tuanhiep.usa.algo.search.graph.Node, Integer> shortestReach(int startId, Graph graph) {
         LinkedList<Integer> queue = new LinkedList<>();
         queue.add(startId);
-        HashMap<Node, Integer> distances = new HashMap<>();
-        Node startNode = graph.getNodeLookUp().get(startId);
+        HashMap<tuanhiep.usa.algo.search.graph.Node, Integer> distances = new HashMap<>();
+        tuanhiep.usa.algo.search.graph.Node startNode = graph.getNodeLookUp().get(startId);
         distances.put(startNode, 0);
         while (!queue.isEmpty()) {
             int nodeId = queue.poll();
-            Node node = graph.getNodeLookUp().get(nodeId);
+            tuanhiep.usa.algo.search.graph.Node node = graph.getNodeLookUp().get(nodeId);
             for (Node neighbor : node.getAdjacent()) {
                 if (!distances.containsKey(neighbor)) {
                     // Remark that in this problem we suppose that all the distance edge are of equal size
