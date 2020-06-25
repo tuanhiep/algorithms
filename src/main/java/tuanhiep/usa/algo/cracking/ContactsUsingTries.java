@@ -16,6 +16,7 @@ class NodeTrie {
     // in the array, it's corresponding index is null
     NodeTrie[] children = new NodeTrie[NUMBER_OF_CHARACTER];
     int size = 0;
+
     private static int getCharIndex(char c) {
         return c - 'a';
     }
@@ -27,13 +28,15 @@ class NodeTrie {
     private void setNodeTrie(char c, NodeTrie node) {
         children[getCharIndex(c)] = node;
     }
+
     // For root mostly
     public void add(String s) {
-        add(s,0);
+        add(s, 0);
     }
 
     /**
      * Here the index is the position of character in string s that we want to starting add to the Trie
+     *
      * @param s
      * @param index
      */
@@ -48,17 +51,27 @@ class NodeTrie {
         NodeTrie child = getNodeTrie(current);
         if (child == null) {
             child = new NodeTrie();
-            setNodeTrie(current,child);
+            setNodeTrie(current, child);
         }
         child.add(s, index + 1);
     }
 
+    /**
+     * Find the number of string s which is stored in the Tries
+     *
+     * @param s
+     * @param index
+     * @return
+     */
     public int findCount(String s, int index) {
         if (index == s.length()) {
+            // When the last character of string s is found in the Tries, we return the number of string or substring s
+            // found in the Tries
             return size;
         }
         NodeTrie child = getNodeTrie(s.charAt(index));
         if (child == null) {
+            // This means there is no string s in the Tries
             return 0;
         }
         return findCount(s, index + 1);
