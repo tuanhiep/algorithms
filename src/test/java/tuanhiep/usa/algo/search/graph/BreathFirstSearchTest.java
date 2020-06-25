@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-class BreathFirstSearchTest {
+public class BreathFirstSearchTest {
     private final BreathFirstSearch breathFirstSearch = new BreathFirstSearch();
     @Test
     public void runTest() {
