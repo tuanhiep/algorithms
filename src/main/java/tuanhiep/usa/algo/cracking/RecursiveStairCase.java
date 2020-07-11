@@ -55,7 +55,7 @@ public class RecursiveStairCase {
         stairCase[1] = 1;
         stairCase[2] = 2;
         for (int i = 3; i < steps; i++) {
-            stairCase[i] = stairCase[i - 1] + stairCase[i - 2] + stairCase[3];
+            stairCase[i] = stairCase[i - 1] + stairCase[i - 2] + stairCase[i-3];
         }
 
         return stairCase[steps];
@@ -75,7 +75,7 @@ public class RecursiveStairCase {
             count = stairCase[0] + stairCase[1] + stairCase[2];
             stairCase[0] = stairCase[1];
             stairCase[1] = stairCase[2];
-            stairCase[2] = stairCase[i];
+            stairCase[2] = count;
         }
 
         return stairCase[2];

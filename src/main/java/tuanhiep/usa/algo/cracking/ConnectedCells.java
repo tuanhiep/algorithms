@@ -36,6 +36,9 @@ public class ConnectedCells {
         if (row < 0 || column < 0 || row > matrix.length || column > matrix[row].length) {
             return 0;
         }
+        if (matrix[row][column] == 0) {
+            return 0;
+        }
         int sizeRegion = 1;
         for (int i = row - 1; i < row + 1; i++) {
             for (int j = column - 1; j < column + 1; j++) {
