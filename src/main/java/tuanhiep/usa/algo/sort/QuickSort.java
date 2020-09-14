@@ -36,7 +36,7 @@ public class QuickSort {
         if (start >= end) {
             return;
         }
-        int pivotIndex = partition(array, start, end);
+        int pivotIndex = partitionWhile(array, start, end);
         quickSort(array, start, pivotIndex - 1);
         quickSort(array, pivotIndex + 1, end);
         return;
@@ -77,26 +77,28 @@ public class QuickSort {
 
     }
 
-    private int partitionWhile(int[] array, int start, int end) {
-        int pivot = array[end];
-        while (start < end) {
+    private int partitionWhile(int[] array, int low, int high) {
+        int pivot = array[low];
+        int i = low, j = high;
+        while (i < j) {
 
-            while (array[start] < pivot) {
-                start++;
+            while (i < high && array[i] <= pivot) {
+                i++;
             }
-            while (array[end] > pivot) {
-                end--;
+            while (j > low && array[j] > pivot) {
+                j--;
             }
-            if (start < end) {
-                int temp = array[start];
-                array[start] = array[end];
-                array[end] = temp;
-                start++;
-                end--;
+            if (i < j) {
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
             }
 
         }
-        return start;
+        int temp = array[low];
+        array[low] = array[j];
+        array[j] = temp;
+        return j;
 
     }
 
