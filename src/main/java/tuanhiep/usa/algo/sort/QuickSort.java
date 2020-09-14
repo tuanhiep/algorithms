@@ -77,28 +77,7 @@ public class QuickSort {
 
     }
 
-    private int partitionWhile(int[] array, int start, int end) {
-        int pivot = array[end];
-        while (start < end) {
 
-            while (array[start] < pivot) {
-                start++;
-            }
-            while (array[end] > pivot) {
-                end--;
-            }
-            if (start < end) {
-                int temp = array[start];
-                array[start] = array[end];
-                array[end] = temp;
-                start++;
-                end--;
-            }
-
-        }
-        return start;
-
-    }
 
 
 }
