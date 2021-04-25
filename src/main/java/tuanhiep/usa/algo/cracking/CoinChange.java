@@ -35,7 +35,7 @@ public class CoinChange {
         if (memo.containsKey(key)) {
             return memo.get(key);
         }
-        while (amountWithCoins < money) {
+        while (amountWithCoins <= money) {
             int remaining = money - amountWithCoins;
             ways += makeChange(coins, remaining, index + 1, memo);
             amountWithCoins += coins[index];
